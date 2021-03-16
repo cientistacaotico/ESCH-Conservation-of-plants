@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Preprint template</title>
+    <script src="https://hypothes.is/embed.js" async></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+
+        :root {
+            --citation: #1976D2;
+            --structure: hsl(210, 61%, 43%);
+            
+            --light: #474747;
+            --pale: #a5a5a5;
+            --grey: #e0e0e0;
+            --nav: #fdfdfd;
+
+            --width: 820px;
+            --inner-space: 1.2em;
+        }
+
+        body {
+            font-family: "Roboto", sans-serif;
+            margin: 0 0;
+            padding: 0 0;
+        }
+
+        article > p {
+            line-height: 135%;
+        }
+        article > h1 {
+            padding-top: 3em;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+            border-bottom: 1px solid var(--structure);
+        }
+        a:hover {
+            font-weight: 500;
+        }
+        .citation {
+            color: var(--citation);
+        }
+        .container {
+            margin: 0em auto;
+            max-width: var(--width);
+            padding: var(--inner-space);
+        }
+        header > .container {
+            margin-top: 4em;
+        }
+        code, pre {
+            font-family: "Roboto Mono", monospace;
+        }
+        pre {
+            white-space: pre-wrap;
+        }
+        h1, h2, h3 {
+            color: var(--structure);
+            font-family: "Roboto Condensed", sans-serif;
+            font-weight: 400;
+        }
+        header {
+            font-family: "Roboto Condensed", sans-serif;
+            z-index: 5;
+            color: black;
+            margin-top: 4rem;
+        }
+        .header--title {
+            font-weight: 400;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .header--authors > span {
+            color: var(--light);
+            font-weight: 400;
+        }
+        main {
+            padding-top: 8em !important;
+            padding-bottom: 8em !important;
+        }
+        footer {
+            background-color: var(--grey);
+            font-weight: 300;
+        }
+        .abstract {
+            color: var(--light);
+            margin-bottom: 5em;
+        }
+        figure {
+            max-width: 100%;
+            border: 1px solid var(--pale);
+            border-radius: 2px;
+            margin: 1em 0.5em;
+        }
+        figure > img {
+            max-width: 100%;
+            display: block;
+            margin: 0em auto;
+        }
+        figure > figcaption {
+            padding: var(--inner-space);
+        }
+        table {
+            width: 100%;
+            min-width: 100%;
+            border-collapse: collapse;
+        }
+        table > caption {
+            padding: var(--inner-space);
+        }
+        figcaption, caption {
+            color: var(--light);
+            font-weight: 300;
+        }
+        thead {
+            color: var(--structure);
+        }
+        td, th {
+            padding: 3px;
+        }
+        tr {
+            border-top: 1px solid var(--structure);
+            border-bottom: 1px solid var(--structure);
+        }
+        tbody > tr:nth-child(even) {background: var(--grey)};
+        tbody {
+            border-bottom: 1px solid var(--structure);
+        }
+        #refs {
+            font-size: 90%;
+            column-count: 2;
+        }
+        #refs > .csl-entry {
+            padding-bottom: 0.2em;
+            padding-top: 0.2em;
+        }
+        .hanging-indent > .csl-entry {
+            padding-left: 15px ;
+            text-indent: -15px ;
+        }    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.css"
+    integrity="sha384-D+9gmBxUQogRLqvARvNLmA9hS2x//eK1FhVb9PiU86gmcrBrJAQT8okdJ4LMp2uv" crossorigin="anonymous" />
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.js"
+    integrity="sha384-483A6DwYfKeDa0Q52fJmxFXkcPCFfnXMoXblOkJ4JcA8zATN6Tm78UNL72AKk+0O"
+    crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/contrib/auto-render.min.js"
+    integrity="sha384-yACMu8JWxKzSp/C1YV86pzGiQ/l1YUfE8oPuahJQxzehAjEt2GiQuy/BIvl9KyeF"
+    crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            renderMathInElement(document.body, {
+                delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false }
+                ]
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="header--title">Preprint template</div>
+            <div class="header--authors">
+                                <span class="header--author">
+                                        <a href="https://orcid.org/0000-0002-0735-5184" target="_blank">
+                        Timothée Poisot
+                    </a>
+                                                                <sup class="affilcode">1</sup>
+                                            <sup class="affilcode">2</sup>
+                                            <sup class="affilcode">‡</sup>
+                                    </span>
+                                <span class="header--author">
+                                        Peregrin Took
+                                                                <sup class="affilcode">3</sup>
+                                            <sup class="affilcode">4</sup>
+                                    </span>
+                                <span class="header--author">
+                                        Merriadoc Brandybuck
+                                                                <sup class="affilcode">5</sup>
+                                            <sup class="affilcode">4</sup>
+                                            <sup class="affilcode">‡</sup>
+                                    </span>
+                            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        <section class="abstract">
+            <b>Abstract:</b> This template is used by the Poisot lab at Université de Montréal to write manuscripts using github. It uses github actions as a way to generate a website that can be annotated using hypothes.is, a PDF document for copy-editing and submission to journals, and a PDF document for submission to preprint servers. At every push on the master branch, the whole series of documents will be updated automatically.<br />
+            <div class="artifacts">
+                <a href="draft.pdf" title="Draft PDF" target="_blank">draft</a>
+                <a href="preprint.pdf" title="Preprint PDF" target="_blank">preprint</a>
+            </div>
+        </section>
+        
+        <article>
+            <p>This template uses recent versions of <code>pandoc</code> and <code>pandoc-crossref</code> to facilitate the referencing of equations, figures, and tables within the text. For example, the following equation</p>
+            <p><span id="eq:eq1"><span class="math display">$$J'(p) = \frac{1}{\text{log}(S)}\times\left(-\sum p \times \text{log}(p)\right)\qquad(1)$$</span></span></p>
+            <p>is produced using</p>
+            <div class="sourceCode" id="cb1"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$J&#39;(p) = </span><span class="sc">\frac</span><span class="ss">{1}{</span><span class="sc">\text</span>{log}<span class="ss">(S)}</span><span class="sc">\times\left</span><span class="ss">(-</span><span class="sc">\sum</span><span class="ss"> p </span><span class="sc">\times</span><span class="ss"> </span><span class="sc">\text</span>{log}<span class="ss">(p)</span><span class="sc">\right</span><span class="ss">)$$</span> {#eq:eq1}</span></code></pre></div>
+            <p>and can be referenced using <code>@eq:eq1</code>, which will result in eq. 1.</p>
+            <p>All documents will be deployed to <code>gh-pages</code> <em>only</em> on push events from the <code>master</code> branch. All of the artifacts will be built when doing pull requests, so you can check that merging a branch is <em>not</em> going to cause the compilation of the documents to fail; indeed, you can download the artifacts produced during the run, to check the PDF and html files.</p>
+            <h1 id="using-references">Using references</h1>
+            <p>The references are managed by <code>pandoc</code>. Note that we <em>do not</em> use <code>pandoc-citeproc</code>, which was an external module for older <code>pandoc</code> versions. References <em>must</em> be stored in a <code>references.bib</code> file. We use <a href="https://www.zotero.org/">Zotero</a> for references management, and for the lab’s manuscripts, we work from folders in a shared library (with a folder for every manuscript).</p>
+            <p>We use the <a href="https://retorque.re/zotero-better-bibtex/">Better BibTeX</a> plugin for citation key generations, and auto-export of the shared library to the <code>references.bib</code> file. We use a citation key format meant to convey information on the author, date, year, and title. It must be set in the Better BibTeX preferences as</p>
+            <pre><code>[auth:fold][year][title:fold:nopunctordash:skipwords:lower:select=1,1:substring=1,3:capitalize][title:fold:nopunctordash:skipwords:lower:select=2,2:substring=1,3:capitalize]</code></pre>
+            <p>It is a good idea to configure Better BibTeX to auto-export on change, and to remove a lot of fields that are not strictly speaking required for references. The list of fields we usually ignore is:</p>
+            <pre><code>abstract,copyright,annotation,file,pmid,month,shorttitle,keywords</code></pre>
+            <p>The citations are done using the normal markdown syntax, where <code>@Elton1927AniEco</code> produces <span class="citation" data-cites="Elton1927AniEco">Elton (1927)</span>, and <code>[@Camerano1880EquViv]</code> produces <span class="citation" data-cites="Camerano1880EquViv">(Camerano 1880)</span>.</p>
+            <h1 id="tables">Tables</h1>
+            <p>Table legends go on the line after the table itself. To generate a reference to the table, use <code>{#tbl:id}</code> – then, in the text, you can use <code>{@tbl:id}</code> to refer to the table. For example, the table below is tbl. 1. You can remove the <em>table</em> in front by using <code>!@tbl:id</code>, or force it to be capitalized with <code>\*tbl:id</code>.</p>
+            <div id="tbl:id">
+            <table>
+            <caption>Table 1: This is a table, and its identifier is <code>id</code> – we can refer to it using <code>{@tbl:id}</code>. Note that even if the table legend is written below the table itself, it will appear on top in the PDF document.</caption>
+            <thead>
+            <tr class="header">
+            <th style="text-align: right;">Sepal.Length</th>
+            <th style="text-align: right;">Sepal.Width</th>
+            <th style="text-align: right;">Petal.Length</th>
+            <th style="text-align: right;">Petal.Width</th>
+            <th style="text-align: left;">Species</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+            <td style="text-align: right;">5.1</td>
+            <td style="text-align: right;">3.5</td>
+            <td style="text-align: right;">1.4</td>
+            <td style="text-align: right;">0.2</td>
+            <td style="text-align: left;">setosa</td>
+            </tr>
+            <tr class="even">
+            <td style="text-align: right;">5.0</td>
+            <td style="text-align: right;">3.6</td>
+            <td style="text-align: right;">1.4</td>
+            <td style="text-align: right;">0.2</td>
+            <td style="text-align: left;">setosa</td>
+            </tr>
+            <tr class="odd">
+            <td style="text-align: right;">5.4</td>
+            <td style="text-align: right;">3.9</td>
+            <td style="text-align: right;">1.7</td>
+            <td style="text-align: right;">0.4</td>
+            <td style="text-align: left;">setosa</td>
+            </tr>
+            </tbody>
+            </table>
+            </div>
+            <h1 id="figures">Figures</h1>
+            <p>Figures can have a legend – all figures <em>must</em> be in the <code>figures/</code> folder of the project, as it is also used for the website. We recommend to use good resolution images, rather than PDFs, or at least to have multiple versions available.</p>
+            <pre><code>![This is the legend of the figure](figures/biomes.png){#fig:biomes}</code></pre>
+            <figure>
+            <img src="figures/biomes.png" id="fig:biomes" alt="Figure 1: This is the legend of the figure" /><figcaption aria-hidden="true">Figure 1: This is the legend of the figure</figcaption>
+            </figure>
+            <p>We can now use <code>@fig:biomes</code> to refer to fig. 1.</p>
+            <h1 id="example-text">Example text</h1>
+            <p>Connectance, defined as the ratio of realized interactions on the total number of potential interactions, is one of the most common descriptor of network structure. In a bipartite network with <span class="math inline"><em>T</em></span> species at the top, and <span class="math inline"><em>B</em></span> at the bottom, having a total of <span class="math inline"><em>L</em></span> interactions, it is defined as <span class="math inline"><em>C</em><em>o</em> = <em>L</em>/(<em>T</em> × <em>B</em>)</span>. Connectance has a lower bound, as the network cannot have fewer interactions that the number of species in its more speciose level – the minimal connectance is therefore <span class="math inline"><em>c</em><sub><em>m</em></sub> = max(<em>T</em>, <em>B</em>)</span>. This makes the connectance of networks of different sizes difficult to compare, especially since bipartite networks tends to have a low connectance. For this reason, we used a corrected version of connectance, defined as</p>
+            <p><span id="eq:cstar"><span class="math display">$$Co^\star=\frac{L-c_m}{T\times B-c_m} \,.\qquad(2)$$</span></span></p>
+            <h2 id="this-is-a-subsection">This is a subsection</h2>
+            <p>This takes values between 0 (the network has the minimal number of interactions) and 1 (all species are connected), but is robust to variations in species richness.</p>
+            <h2 id="this-is-another-subsection">This is another subsection</h2>
+            <p>This takes values between 0 (the network has the minimal number of interactions) and 1 (all species are connected), but is robust to variations in species richness.</p>
+            <h1 class="unnumbered" id="references">References</h1>
+            <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+            <div id="ref-Camerano1880EquViv" class="csl-entry" role="doc-biblioentry">
+            Camerano, Lorenzo. 1880. <span>“Dell’equilibrio Dei Viventi Merce La Reciproca Distruzione.”</span> <em>Atti Della R. Accad. Delle Sci. Torino</em> 15: 393–414.
+            </div>
+            <div id="ref-Elton1927AniEco" class="csl-entry" role="doc-biblioentry">
+            Elton, Charles S. 1927. <em>Animal Ecology</em>. University of Chicago Press.
+            </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <h2>Affiliations</h2> 
+            <sup>1</sup>&nbsp;Université de Montréal; <sup>2</sup>&nbsp;Québec Centre for Biodiversity Sciences; <sup>3</sup>&nbsp;Inn of the Prancing Pony; <sup>4</sup>&nbsp;Fellowship of the Ring; <sup>5</sup>&nbsp;Green Dragon Inn
+            <br />
+            <sup>‡</sup>&nbsp;These authors contributed equally to the work
+        </div>
+    </footer>
+    
+</body>
+</html>

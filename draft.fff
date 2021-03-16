@@ -1,0 +1,7 @@
+\begin{figure}
+\hypertarget{fig:biomes}{%
+\centering
+\includegraphics{figures/biomes.png}
+\caption{This is the legend of the figure}\label{fig:biomes}
+}
+\end{figure}
