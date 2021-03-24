@@ -7,4 +7,12 @@ ipak <- function(pkg){
   sapply(pkg, require, character.only = TRUE)
 }
 
-ipak(c("flora"))
+ipak(c("flora",
+       "devtools",
+       "Rocc"))
+
+# From GitHub -------------------------------------------------------------
+
+# Use this session only whether GitHub packages are not installed
+
+devtools::install_github("liibre/Rocc")
