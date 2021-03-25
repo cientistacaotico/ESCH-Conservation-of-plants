@@ -9,7 +9,8 @@ ipak <- function(pkg){
 
 ipak(c("flora",
        "devtools",
-       "Rocc"))
+       "Rocc",
+       "dplyr"))
 
 # From GitHub -------------------------------------------------------------
 
