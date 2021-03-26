@@ -5,6 +5,15 @@
 florabr <- read.csv("./Data/flora_do_brasil.csv", header = TRUE, sep = ";")
 florabr <- florabr[1:nrow(florabr), 1]
 
+# Organizing folders ------------------------------------------------------
+
+# Perform the following code to create folders used here
+
+dir.create("./result")
+dir.create("./result/raw")
+dir.create("./result/raw/gbif")
+dir.create("./result/raw/splink")
+
 # GBIF --------------------------------------------------------------------
 
 # When reproducing this code may result in additional records

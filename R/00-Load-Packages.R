@@ -10,10 +10,12 @@ ipak <- function(pkg){
 ipak(c("flora",
        "devtools",
        "Rocc",
-       "dplyr"))
+       "dplyr",
+       "ENMTML"))
 
 # From GitHub -------------------------------------------------------------
 
 # Use this session only whether GitHub packages are not installed
 
 devtools::install_github("liibre/Rocc")
+library(Rocc)
