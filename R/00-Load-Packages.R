@@ -17,5 +17,6 @@ ipak(c("flora",
 
 # Use this session only whether GitHub packages are not installed
 
+if (!"devtools" %in% installed.packages()){install.packages("devtools")}  
+devtools::install_github("andrefaa/ENMTML")
 devtools::install_github("liibre/Rocc")
-library(Rocc)

@@ -9,10 +9,10 @@ florabr <- florabr[1:nrow(florabr), 1]
 
 # Perform the following code to create folders used here
 
-dir.create("./result")
-dir.create("./result/raw")
-dir.create("./result/raw/gbif")
-dir.create("./result/raw/splink")
+dir.create("./results")
+dir.create("./results/raw")
+dir.create("./results/raw/gbif")
+dir.create("./results/raw/splink")
 
 # GBIF --------------------------------------------------------------------
 
@@ -47,7 +47,7 @@ write.csv(gbif, file = "./results/raw/gbif/gbif.csv", row.names = FALSE)
 no_coordinates <- matrix(nrow = length(florabr), ncol = 1)
 
 for (i in 1:length(florabr)) {
-  data <- rspeciesLink(species = florabr[i], save = FALSE, Coordinates = "Yes", MaxRecords = 99500)
+  data <- rspeciesLink(species = florabr[i], save = FALSE, Coordinates = "Yes", MaxRecords = 99500, Synonyms = "flora2020")
   if(class(data) == "list"){
     no_coordinates[i,1] <- florabr[i]
     no_coordinates <- na.omit(as.data.frame(no_coordinates))
@@ -64,8 +64,8 @@ for (i in 1:length(florabr)) {
   print(i)
 }
 
+splink <- bind_cols(splink[,1], as.numeric(splink[,2]), as.numeric(splink[,3]))
 colnames(splink) <- colnames(gbif)
-splink %>% mutate_at(vars(decimalLongitude, decimalLatitude), ~ as.numeric(as.character(.)))
 
 write.csv(splink, file = "./results/raw/splink/splink.csv", row.names = FALSE)
 
@@ -74,3 +74,7 @@ write.csv(splink, file = "./results/raw/splink/splink.csv", row.names = FALSE)
 occ_data <- bind_rows(gbif, splink)
 
 write.csv(occ_data, file = "./results/raw/occ_data.csv", row.names = FALSE)
+
+save(occ_data, file = "./results/raw/occ_data.Rdata")
+
+rm(gbif, splink, data, no_coordinates, occ_data)
