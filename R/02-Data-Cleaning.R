@@ -2,6 +2,7 @@
 
 # Perform the following code to create folders used here
 
+<<<<<<< HEAD
 dir.create("./results/clean")
 
 # Data cleaning process ---------------------------------------------------
@@ -23,3 +24,8 @@ for (i in 1:nrow(occ_data)) {
 }
 
 save(check_names, file = "./results/clean/occ_data.Rdata")
+=======
+dir.create("./result")
+dir.create("./result/clean")
+
+>>>>>>> 49c999dfcdb5c16e5957f93250e5fce6f89ef421
