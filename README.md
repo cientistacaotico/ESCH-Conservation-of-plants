@@ -2,8 +2,8 @@
 
 ### Repository structure
 
--`.assets` 
--`.github/workflows`
--`Data` contains the initial input of species names
--`R` contains the codes in R programming, numbered according to the order in which they must be performed
--`figures` contains the figures produced, organized by outcome
+* `.assets` 
+* `.github/workflows`
+* `Data` contains the initial input of species names
+* `R` contains the codes in R programming, numbered according to the order in which they must be performed
+* `figures` contains the figures produced, organized by outcome
