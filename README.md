@@ -1,3 +1,5 @@
+Pablo Henrique da Silva [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0001-5800-9268), Daisy Jorge, Gracielle Higino [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0003-2791-8383)
+
 ## How to use the manuscript template?
 
 - Click on the "Use this template" button
